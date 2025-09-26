@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU Scheduling Algorithms</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <!-- //Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
+
+<!-- bt -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- header  -->
+    <div >
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Operating System</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="th.html">Theory</a>
+                  </li>
+                  
+                </ul>
+               
+              </div>
+            </div>
+        </nav>
+    <br>
+
+
+
+
+
+    <div class="centerDiv">
+    
+    <!-- <h3>Instructions :</h3> -->
+    <!-- <ul  class="instructions">
+        <li>Tiebreaker is Process ID.</li>
+        <li>When burst time is criteria, total burst time is taken into consideration.</li>
+        <li>Context Switch not considered at start and end of processes.</li>
+    </ul>
+    -->
+
+    <h2>CPU Scheduling in Operating Systems</h2>
+    <p>
+        Scheduling of processes/work is done to finish the work on time. CPU Scheduling is a process that allows one process to use the CPU while another process is delayed (in standby) due to unavailability of any resources such as I / O etc, thus making full use of the CPU. The purpose of CPU Scheduling is to make the system more efficient, faster, and fairer.
+    </p>
+    <h2>Visualiser For Scheduling Algorithms</h2>
+        <form id="algorithms-form">
+            <label for="algo"><h3>Algorithms : </h3></label>
+            <select name="algo" id="algo">
+                <option value="fcfs">First Come First Serve (FCFS)</option>
+                <option value="sjf">Shortest Job First (SJF)</option>
+                <option value="srtf">Shortest Remaining Job First (SRTF)</option>
+                <option value="rr">Round Robin</option>
+            </select>
+        </form>
+        <br>
+        <table class="main-table">
+            <thead>
+                <tr>
+                    <th class="process-id">Process ID</th>
+                    <th class="priority hide">Priority</th>
+                    <th class="arrival-time">Arrival Time</th>
+                    <th class="process-time" colspan="1">Process Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="process-id" rowspan="2">P1</td>
+                    <td class="priority hide" rowspan="2"><input type="number" min="1" step="1" value="1"></td>
+                    <td class="arrival-time" rowspan="2"><input type="number" min="0" step="1" value="0"> </td>
+                </tr>
+                <tr>
+                    <td class="process-time cpu process-input"><input type="number" min="1" step="1" value="1"> </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <button type="button" class="add-btn">Add Process</button>
+        <button type="button" class="remove-btn">Delete Process</button>
+       
+        <div id="time-quantum" class="hide">
+            <br>
+            <label for="tq">Time Quantum : </label>
+            <input type="number" name="Time Quantum" id="tq" min="1" step="1" value="1">
+        </div>
+        <!-- <br> -->
+        <button type="button" id="calculate">Calculate</button>
+        <button type="button" id="reset" onClick="window.location.reload();">Reset</button>
+        <div id="output"></div>
+        </div>
+
+
+        <!-- footer  -->
+
+    <footer class=" footer">
+        <div class="footer-header">PBL Project</div>
+        <ul class="list-non-bullet">
+            <li class="list-item-inline">
+                Aditi Jeena
+            </li>
+            <li class="list-item-inline">
+                Saurabh Pandey
+
+            </li>
+            <li class="list-item-inline">
+                Akshay Bartwal
+            </li>
+        </ul>
+    </div>
+ </footer>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="script.js"></script>
+
+
+
+        <!-- bt  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>
